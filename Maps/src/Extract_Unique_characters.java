@@ -29,18 +29,15 @@ public class Extract_Unique_characters {
 		 * Return output and don't print it.
 	 	 * Taking input and printing output is handled automatically.
 		*/
-          HashMap<Character,Integer> maps = new HashMap<Character, Integer>();
+        HashMap<Character,Integer> maps = new HashMap<Character, Integer>();
         String output ="";
         for(int i=0;i<str.length();i++) {
         	if(!maps.containsKey(str.charAt(i))) {
         		maps.put(str.charAt(i), 1);
         		output+=str.charAt(i);
-        		
         	}
         }
-        
          return output;
-
 	}
 	
 	public static void main(String[] args) {

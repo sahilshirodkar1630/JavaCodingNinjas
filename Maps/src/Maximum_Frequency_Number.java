@@ -29,7 +29,7 @@ public class Maximum_Frequency_Number {
 			 * Return output and don't print it.
 		 	 * Taking input and printing output is handled automatically.
 			*/
-		  HashMap<Integer, Integer> maps = new HashMap<Integer, Integer>();
+ HashMap<Integer, Integer> maps = new HashMap<Integer, Integer>();
 		  
 		  for(int i=0;i<array.length;i++) {
 			  if(maps.containsKey(array[i])) {
@@ -39,16 +39,11 @@ public class Maximum_Frequency_Number {
 			  
 			  maps.put(array[i], 1);
 		  }
-		  Set<Integer> keys =maps.keySet();
-		  for(int i: keys) {
-			  System.out.println(i+" "+maps.get(i));
-		  }
 		  int max=0;
 		  int ans =0;
-		  for(int i:keys) {
-			  int val=maps.get(i);
-			  if(val>max) {
-				  max= val;
+		  for(int i: array) {
+			  if(maps.get(i)>max) {
+				  max= maps.get(i);
 				  ans = i;
 			  }
 		  }
