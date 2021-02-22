@@ -29,7 +29,7 @@ public class Pair_Sum_to_0 {
 		 * Return output and don't print it.
 	 	 * Taking input and printing output is handled automatically.
         */
-        	HashMap<Integer, Integer> maps = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> maps = new HashMap<Integer, Integer>();
 		for(int i=0;i<input.length;i++) {
 			if(maps.containsKey(input[i])) {
 				maps.put(input[i], maps.get(input[i])+1);
