@@ -14,13 +14,12 @@ public class Search_word_in_Trie {
 		if(child != null) {
 			return search(child,word.substring(1));
 		}
-		 
-		return false;
 		
+		return false;
 	}
 	
 	public boolean search(String word) {
-		
 		return search(root,word);
 	}
+	
 }
