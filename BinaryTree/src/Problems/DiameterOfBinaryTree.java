@@ -51,7 +51,6 @@ public class DiameterOfBinaryTree {
 		int option3 = diameter(root.right);
 		
 		return Math.max(option1,Math.max(option2, option3));
-		
 	}
 	public static int height(BinaryTreeNode<Integer> root) {
 		if(root == null) {
