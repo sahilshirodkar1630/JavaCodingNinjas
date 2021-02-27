@@ -35,7 +35,6 @@ public class Pair_Sum_Binary_Tree {
 		int j= array.size()-1;
 		while(i<j) {
 			int value = array.get(i)+array.get(j);
-//			System.out.println(value);
 			if(value == sum) {
 				System.out.println(array.get(i)+" "+array.get(j));
 				i++;
@@ -51,11 +50,53 @@ public class Pair_Sum_Binary_Tree {
 		
 		
 	}
-
+	
+	
+	// This solution will take OOrder of NSquare Time 
+//	 private static void search(BinaryTreeNode<Integer> root,int data ,int val ) {
+//			
+//			if(root==null) {
+//				return ;
+//			}
+//	        
+//			if(root.data == data) {
+//				if(val<root.data) {
+//				System.out.println(val+" "+root.data);
+//				}else {
+//					System.out.println(root.data+" "+val);
+//				}
+//				root.data = Integer.MIN_VALUE;
+//				return ;
+//			}
+//			
+//			 search(root.left,data,val);
+//			 search (root.right,data,val);
+//			//Implement the search() function
+//		}
+//		 public static void pairSum(BinaryTreeNode<Integer> mainRoot,BinaryTreeNode<Integer> root, int sum) {
+//			 if(root==null) {
+//				 return;
+//			 }
+//			int data = sum-root.data;
+//			if(root.data!=data){
+//			search(mainRoot, data, root.data);
+//	        }
+//			pairSum(mainRoot,root.left, sum);
+//
+//			pairSum(mainRoot,root.right, sum);
+//		
+//			
+//			
+//		 }
+//		 public static void pairSum(BinaryTreeNode<Integer> root, int sum) {
+//			 pairSum(root,root, sum);
+//		 }
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BinaryTreeNode<Integer> root = takeInputLevelWise();
-		pairSum(root, 9);
+		pairSum(root,8);
 
 	}
 	public static BinaryTreeNode<Integer> takeInputLevelWise(){
