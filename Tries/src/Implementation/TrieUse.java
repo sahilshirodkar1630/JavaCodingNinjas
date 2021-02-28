@@ -1,5 +1,7 @@
 package Implementation;
 
+import java.util.ArrayList;
+
 public class TrieUse {
 
 	public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class TrieUse {
 //		t.remove("this");
 		System.out.println(t.search("this"));
 		System.out.println(t.countWords());
+        
 	}
 
 }
