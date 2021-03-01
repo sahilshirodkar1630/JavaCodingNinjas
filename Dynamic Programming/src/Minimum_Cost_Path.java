@@ -42,7 +42,6 @@ public class Minimum_Cost_Path {
 			return Integer.MAX_VALUE;
 		}
 		if(row==input.length-1 && col==input[0].length-1) {
-			
 			return input[row][col];
 		}
 	
