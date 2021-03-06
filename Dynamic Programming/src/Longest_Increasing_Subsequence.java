@@ -54,7 +54,6 @@ public static int lis(int arr[]) {
         int output =0;
         for(int i=0;i<dp.length;i++){
             // System.out.print(dp[i]+" ");
-
             if(dp[i]>output){
                 output=dp[i];
             }
