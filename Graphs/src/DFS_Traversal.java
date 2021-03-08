@@ -11,8 +11,8 @@ public class DFS_Traversal {
 				printDFSHelper(edges, i, visited);
 			}
 		}
-		
 	}
+	
 	public static void DFS(int edges[][]) {
 		boolean visited[] = new boolean[edges.length];
 		for(int i=0;i<edges.length;i++) {
@@ -21,6 +21,7 @@ public class DFS_Traversal {
 			}
 		}
 	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner (System.in);
