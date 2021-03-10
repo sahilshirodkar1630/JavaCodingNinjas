@@ -28,11 +28,6 @@ public class Kruskals_Algorithms {
 		int n = sc.nextInt();
 		int e = sc.nextInt();
 
-		/* Write Your Code Here
-		 * Complete the Rest of the Program
-		 * You have to take input and print the output yourself
-		 */
-		
         Edge inputEdge[]= new Edge[e];
 		for(int i = 0;i < e;i++) {
 			inputEdge[i]= new Edge();
