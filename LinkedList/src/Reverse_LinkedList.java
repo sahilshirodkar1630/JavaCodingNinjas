@@ -8,6 +8,7 @@ public class Reverse_LinkedList {
 		Node<Integer> current = head;
 		Node<Integer>  prev = null;
 		Node<Integer>  next = null;
+		
         while(current!=null) {    	
         	
         	next= current.next;

@@ -13,6 +13,7 @@ public class Reverse_LinkedList_Recursive {
             System.out.println(temp.data+" "+temp.next.data);
             return temp;
         }
+        
          Node<Integer> smallAns = reverseLinkedListRec(head.next);
          temp= smallAns;
         while(temp.next != null){
