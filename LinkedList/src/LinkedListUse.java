@@ -12,32 +12,32 @@ public class LinkedListUse {
 			System.out.println();
 	}
 	
-	public static Node<Integer> TakeInput()// O(n^2)
-	{
-//		O(n^2)
-		Node<Integer> head = null; 
-		Scanner sc = new Scanner(System.in);
-		int data = sc.nextInt();
-		
-		while(data != -1) {
-			Node<Integer> newNode = new Node<Integer>(data);
-			if(head == null) {
-				head = newNode;
-			}else {
-				Node<Integer> temp = head;
-				while(temp.next != null) {
-				temp= temp.next;	
-				}
-				temp.next = newNode;
-				
-			}
-			data =sc.nextInt();
-			
-		}
-		return head;
-		
-		
-	}
+//	public static Node<Integer> TakeInput()// O(n^2)
+//	{
+////		O(n^2)
+//		Node<Integer> head = null; 
+//		Scanner sc = new Scanner(System.in);
+//		int data = sc.nextInt();
+//		
+//		while(data != -1) {
+//			Node<Integer> newNode = new Node<Integer>(data);
+//			if(head == null) {
+//				head = newNode;
+//			}else {
+//				Node<Integer> temp = head;
+//				while(temp.next != null) {
+//				temp= temp.next;	
+//				}
+//				temp.next = newNode;
+//				
+//			}
+//			data =sc.nextInt();
+//			
+//		}
+//		return head;
+//		
+//		
+//	}
 	
 	public static Node<Integer> takeInput() // O(n)
 	{
@@ -72,7 +72,7 @@ public class LinkedListUse {
 			
 			return newNode;
 		}
-		int i=0;
+		int i=1;
 		Node<Integer> temp = head;
 		while(i<pos-1) {
 			temp = temp.next;
@@ -149,15 +149,16 @@ public class LinkedListUse {
 //		print(head);
 		
 		Node<Integer>  head = takeInput();
+//		print(head);
+//		
+//		head = insertNode(head, 35, 0);
+//
+//		print(head);
+//		head = deleteNode(head, 0);
+//		head = insertNode(head, 25,3);
 		print(head);
-		
-		head = insertNode(head, 35, 0);
-
+		head = insertNode(head, 8, 1);
 		print(head);
-		head = deleteNode(head, 0);
-		head = insertNode(head, 25,3);
-		print(head);
-	
 	}
 
 }
