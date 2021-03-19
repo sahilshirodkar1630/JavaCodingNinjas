@@ -2,22 +2,23 @@ import java.util.Scanner;
 
 public class DFS_Traversal {
 
-	public static void printDFSHelper(int edges[][],int sv,boolean visited[]) {
+	public static void printDFSHelper(int adjacencyMatrix[][],int sv,boolean visited[]) {
 		System.out.println(sv);
 		visited[sv] = true;
-		int n = edges.length;
+		int n = adjacencyMatrix.length;
 		for(int i=0;i<n;i++) {
-			if(edges[sv][i]==1&& !visited[i]) {
-				printDFSHelper(edges, i, visited);
+			if(adjacencyMatrix[sv][i] == 1 && !visited[i]) {
+				printDFSHelper(adjacencyMatrix, i, visited);
 			}
 		}
 	}
 	
-	public static void DFS(int edges[][]) {
-		boolean visited[] = new boolean[edges.length];
-		for(int i=0;i<edges.length;i++) {
+	public static void DFS(int adjacencyMatrix[][]) {
+		boolean visited[] = new boolean[adjacencyMatrix.length];
+		
+		for(int i=0;i<adjacencyMatrix.length;i++) {
 			if(!visited[i]) {
-				printDFSHelper(edges, i, visited);
+				printDFSHelper(adjacencyMatrix, i, visited);
 			}
 		}
 	}
@@ -25,16 +26,16 @@ public class DFS_Traversal {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner (System.in);
-		int v = sc.nextInt();
-		int e = sc.nextInt();
-		int edges[][]= new int[v][v];
-		for(int i=0;i<e;i++) {
+		int numberOfVertices = sc.nextInt();
+		int numberOfEdges = sc.nextInt();
+		int adjacencyMatrix[][]= new int[numberOfVertices][numberOfVertices];
+		for(int i=0;i<numberOfEdges;i++) {
 			int fv = sc.nextInt();
 			int sv =sc.nextInt();
-			edges[fv][sv]=1;
-			edges[sv][fv]=1;    
+			adjacencyMatrix[fv][sv]=1;
+			adjacencyMatrix[sv][fv]=1;    
 		}
-		DFS(edges);
+		DFS(adjacencyMatrix);
 		
 	}
 
