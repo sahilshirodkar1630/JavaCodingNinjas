@@ -18,6 +18,7 @@ public class IsGraphCyclic {
 			adjacencyMatrix[fv][sv]=1;
 			adjacencyMatrix[sv][fv]=1;    
 		} 
+		
 		boolean[] visited = new boolean[adjacencyMatrix.length];
 		boolean isCyclic = false;
 		for(int i=0;i<adjacencyMatrix.length;i++) {
