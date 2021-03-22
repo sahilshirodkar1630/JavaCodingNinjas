@@ -72,12 +72,17 @@ public class MergeTwoSortedLL {
 	    	
 	    }
 	    
-	    
+//	    1
+//	    2 5 8 12 -1
+//	    3 6 9 -1
 		private static Node<Integer> mergeTwoSortedLinkedLists(Node<Integer> head1, Node<Integer> head2) {
 			// TODO Auto-generated method stub
+			
 			Node<Integer> one = head1;
 			Node<Integer> two = head2;
+			
 			Node<Integer> tail=null;
+			
 			if(one.data<two.data) {
 				tail =insert(tail, one.data);
 				one = one.next;
