@@ -25,6 +25,7 @@ public class Leaf_Similar_Trees {
         return output;
         
     }
+    
     public static boolean leafSimilar(BinaryTreeNode<Integer> root1, BinaryTreeNode<Integer> root2) {
         ArrayList<Integer> root1Array = getLeaf(root1);
          ArrayList<Integer> root2Array = getLeaf(root2);
