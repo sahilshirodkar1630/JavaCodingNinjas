@@ -34,7 +34,7 @@ public class Palindrome_LinkedList {
 //		false
 //		true
 	
-	public static  Node<Integer> Reverse( Node<Integer> head){
+	public static Node<Integer> Reverse( Node<Integer> head){
 	       
 		Node<Integer> current = head;
 		Node<Integer>  prev = null;
@@ -49,52 +49,98 @@ public class Palindrome_LinkedList {
         return head;
     }
 
-	public static boolean isPalindrome(Node<Integer> head) {
-		//Your code goes here
-		if(head==null) {
+public static boolean isPalindrome_2(Node<Integer>  head){
+       if(head==null) {
 			return true;
 		}
 		if(head.next==null) {
 			return true;
 		}
+    
+		int l = length(head);
+		Node<Integer> t1 = head;
+		int mid= l/2;
+		boolean isPalindrome= true; 
 		
-        Node<Integer> temp = head;
-        int i=0;
-        while(temp != null){
-            temp = temp.next;
-            i++; 
+		for(int i = 0;i<mid;i++) {
+		t1= t1.next;
         }
-        int midpoint =i/2;
-         i=0;temp=head;
-        while(i<midpoint-1){
-            temp = temp.next;
-            System.out.println(temp.data);
-            i++;
-        }
-         Node<Integer> head2 =temp.next;
-//         System.out.println(head.data+" "+head2.data);
-        temp.next=null;
-        head2 = Reverse(head2);
-//        print(head);
-//        print(head2);
-        Node<Integer> temp1 = head;
-        Node<Integer> temp2 = head2;
-        
-        boolean isTrue= false;
-        while(temp1!=null && temp2!=null) {
-        	isTrue = false;
-//        	System.out.println(temp1.data+" "+temp2.data);
-        	if(temp1.data.equals(temp2.data)) {
-        		isTrue = true;
-        	}
-        	
-        	temp1 = temp1.next;
-        	temp2 = temp2.next;
-        	
-        }
-        
-        return isTrue;
-	}
+		
+		Node<Integer> t2 = null;
+		 t2= t1.next;
+		 t1.next= null;
+		 print(head);
+		 print(t2);
+   		t2 =  Reverse(t2);
+   		print(t2);
+		 while(t2.next!=null) {
+			 if(t2.data == t1.data) {
+				 isPalindrome=true;
+			 }
+			 else {
+				 isPalindrome=false;
+			 }
+			 t1=t1.next;
+			 t2=t2.next;
+		 }
+		 return isPalindrome;
+}
+
+public static int length(Node<Integer> head){
+    int count=0;
+    while(head!=null){
+        count++;
+        head=head.next;
+    }
+    return count;
+}
+
+//	public static boolean isPalindrome(Node<Integer> head) {
+//		//Your code goes here
+//		if(head==null) {
+//			return true;
+//		}
+//		if(head.next==null) {
+//			return true;
+//		}
+//		
+//        Node<Integer> temp = head;
+//        int i=0;
+//        while(temp != null){
+//            temp = temp.next;
+//            i++; 
+//        }
+//        int midpoint =i/2;
+//         i=0;temp=head;
+//        while(i<midpoint-1){
+//            temp = temp.next;
+//            System.out.println(temp.data);
+//            i++;
+//        }
+//         Node<Integer> head2 =temp.next;
+////         System.out.println(head.data+" "+head2.data);
+//        temp.next=null;
+//        head2 = Reverse(head2);
+////        print(head);
+////        print(head2);
+//        Node<Integer> temp1 = head;
+//        Node<Integer> temp2 = head2;
+//        
+//        boolean isTrue= false;
+//        while(temp1!=null && temp2!=null) {
+//        	isTrue = false;
+////        	System.out.println(temp1.data+" "+temp2.data);
+//        	if(temp1.data.equals(temp2.data)) {
+//        		isTrue = true;
+//        	}
+//        	
+//        	temp1 = temp1.next;
+//        	temp2 = temp2.next;
+//        	
+//        }
+//        
+//        return isTrue;
+//	}
 
 static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
@@ -131,18 +177,15 @@ static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
     
     public static void main(String[] args) throws NumberFormatException, IOException {
-        int t = Integer.parseInt(br.readLine().trim());
-
-        while (t > 0) {
+      
 
              Node<Integer> head = takeInput(); 
 
-            boolean ans = isPalindrome(head);
+            boolean ans = isPalindrome_2(head);
             System.out.println(ans);
 
-            t -= 1;
+  
 
-        }
         
     }
 
