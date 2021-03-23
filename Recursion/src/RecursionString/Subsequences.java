@@ -28,7 +28,6 @@ public class Subsequences {
 		String ans[]= findSubsequences(str);
 		
 		for(int i=0;i<ans.length;i++) {
-			
 			System.out.println(ans[i]);
 		}
 		
