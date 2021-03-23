@@ -20,7 +20,9 @@ public class BinaryTreeUse {
 	public static BinaryTreeNode<Integer> takeInputLevelWise(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter root data");
+		
 		int rootData = sc.nextInt();
+		
 		BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(rootData);
 		QueueUsingLL<BinaryTreeNode<Integer>> queue = new QueueUsingLL<BinaryTreeNode<Integer>>();
 		queue.enqueue(root);
