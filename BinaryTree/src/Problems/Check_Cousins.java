@@ -6,7 +6,9 @@ import Implementation.BinaryTreeNode;
 
 public class Check_Cousins {
 
-//	Given the binary Tree and two nodes say ‘p’ and ‘q’. Determine whether the two nodes are cousins of each other or not. Two nodes are said to be cousins of each other if they are at same level of the Binary Tree and have different parents.
+//	Given the binary Tree and two nodes say ‘p’ and ‘q’.
+//	Determine whether the two nodes are cousins of each other or not. 
+//	Two nodes are said to be cousins of each other if they are at same level of the Binary Tree and have different parents.
 //	Do it in O(n).
 //	Input format :
 //	Line 1 : Nodes in level order form (separated by space). If any node does not have left or right child, take -1 in its place
@@ -44,7 +46,7 @@ public class Check_Cousins {
 			return true;
 		}else {
 			return false;
-			}
+		}
 		
 
 	}
