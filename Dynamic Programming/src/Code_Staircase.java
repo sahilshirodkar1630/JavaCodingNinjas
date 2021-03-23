@@ -10,7 +10,6 @@ public class Code_Staircase {
 		
 		Output format :
 			Print the total possible number of ways.
-			
 		Sample Input 1:
 			4
 		Sample Output 1:
@@ -19,8 +18,8 @@ public class Code_Staircase {
 			10
 		Sample Output 2:
 			274
+			
 */
-	
 	//Normal Recursive Approoach
 	public static long staircase(int n) {
 		//Your code goes here
