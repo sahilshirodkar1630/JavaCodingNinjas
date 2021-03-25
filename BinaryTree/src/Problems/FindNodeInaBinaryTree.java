@@ -17,11 +17,9 @@ public class FindNodeInaBinaryTree {
 		if(root.data == x) {
 			return true;
 		}
-		
 		boolean isPresent = false;
-		
 		isPresent = isNodePresent(root.left, x);
-		if(isPresent==true) {
+		if(isPresent) {
 			return isPresent;
 		}
 		isPresent = isNodePresent(root.right, x);
