@@ -9,14 +9,13 @@ public class All_consecutive_elements {
 	        for(int i=0;i<=n-1;i++) {
 	         array[i]=sc.nextInt();
 	        }
-	        
 	         return array;
-
 	}
+	
 	public static int Duplicate(int[] a) {
 		int Answer =0;
 		int ans[] = new int [256];
-        for(int i=0;i<a.length;i++){
+        for(int i=0; i<a.length ; i++){
             int value = a[i];
             ans[value]++;
         }
