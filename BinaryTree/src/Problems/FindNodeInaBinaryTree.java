@@ -11,20 +11,17 @@ public class FindNodeInaBinaryTree {
 	
 	public static boolean isNodePresent(BinaryTreeNode<Integer> root, int x) {
 	    //Your code goes here
-		if(root==null) {
-			return false;
-		}
-		if(root.data == x) {
-			return true;
-		}
-		boolean isPresent = false;
-		isPresent = isNodePresent(root.left, x);
-		if(isPresent) {
-			return isPresent;
-		}
-		isPresent = isNodePresent(root.right, x);
-		
-		return isPresent;
+		if(root == null){
+            return false;
+        }
+        
+        if(root.data == x ){
+            return true;
+        }
+        
+        boolean left = isNodePresent(root.left,x);
+        boolean right = isNodePresent(root.right, x);
+        return left||right;
 		
 	}
 

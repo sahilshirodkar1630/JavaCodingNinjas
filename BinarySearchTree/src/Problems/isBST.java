@@ -3,6 +3,7 @@ package Problems;
 import java.util.Scanner;
 
 public class isBST {
+	
 	public static class Pair<T,V>{
 		public T first;
 		public V second;
