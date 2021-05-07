@@ -11,7 +11,6 @@ public class PrintNodesAtDepthK {
 		}
 		if(depth == 0) {
 			System.out.print(root.data+" ");
-			
 		}
 		printNodesAtDepthK(root.left, depth-1);
 		printNodesAtDepthK(root.right, depth-1);

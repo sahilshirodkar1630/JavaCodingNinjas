@@ -54,10 +54,6 @@ public class BinarySearchTree {
 			}
 		}
 		
-		
-		
-		
-		
 	}
 	public void remove(int data) {
 		//Implement the remove() function

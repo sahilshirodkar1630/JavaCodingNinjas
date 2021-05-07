@@ -2,41 +2,47 @@ package Problems;
 
 import java.util.Scanner;
 
+import Problems.isBST.Pair;
+
 public class isBST {
 	
-	public static class Pair<T,V>{
-		public T first;
-		public V second;
+	public static class Pair{
+		public boolean isBst;
+		public int min;
+		public int max;
 	}
 	
-	public static Pair<Boolean,Pair<Integer,Integer>> isBST2(BinaryTreeNode<Integer> root){
+	public static void main(String[] args) {
+		BinaryTreeNode<Integer> root = takeInputLevelWise();
+		System.out.println(isBST3(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+	}
+	
+	public static  Pair isBST(BinaryTreeNode<Integer> root) {
+	
 		if(root == null) {
-			Pair<Boolean, Pair<Integer,Integer>> output = new Pair<Boolean, isBST.Pair<Integer,Integer>>();
-			output.first = true;
-			output.second = new Pair<Integer, Integer>();
-			output.second.first = Integer.MAX_VALUE;
-			output.second.second = Integer.MIN_VALUE;
-			return output;
+			Pair p = new Pair();
+			p.isBst  = true;
+			p.min = Integer.MAX_VALUE;
+			p.max = Integer.MIN_VALUE;
 		}
-		Pair<Boolean, Pair<Integer,Integer>> leftOutput = isBST2(root.left);
-		Pair<Boolean, Pair<Integer,Integer>> rightOutput = isBST2(root.right);
-		int min = Math.min(root.data,Math.min(leftOutput.second.first, rightOutput.second.first));
-		int max = Math.max(root.data,Math.max(leftOutput.second.second, rightOutput.second.second));
 		
-		boolean isBst= (root.data>leftOutput.second.second) 
-				&& (root.data <= rightOutput.second.first)
-				&& leftOutput.first && rightOutput.first;
+		Pair left  = isBST(root.left);
+		Pair right = isBST(root.right);
 		
-		Pair<Boolean, Pair<Integer,Integer>> output = new Pair<Boolean, isBST.Pair<Integer,Integer>>();
-		output.first = isBst;
-		output.second = new Pair<Integer, Integer>();
-		output.second.first = min;
-		output.second.second = max;
-		return output;
+		int min = Math.min(root.data, Math.min(left.min, right.min));
+		int max = Math.max(root.data, Math.max(left.max, right.max));
 		
+		boolean isBst = (root.data > left.max) && (root.data < right.min) && left.isBst && right.isBst;
 		
+		Pair ans = new Pair();
+		
+		ans.isBst = isBst;
+		ans.max = max;
+		ans.min = min;
+		return ans;
 		
 	}
+	
 	public static boolean isBST3(BinaryTreeNode<Integer> root,int min ,int max) {
 		if(root == null) {
 			return true;
@@ -70,11 +76,10 @@ public class isBST {
 //		}
 //		int leftmax = maximum(root.left);
 //		int rightmin = minimum(root.right);
-//		if(root.data<=leftmax) {
-//			return false;
-//		}else if (root.data>=rightmin) {
+//		if(root.data<=leftmax || root.data>=rightmin ) {
 //			return false;
 //		}
+//		
 //		boolean isleftBST = isBST(root.left);
 //		boolean isRightBST = isBST(root.right);
 //		if(isleftBST&& isRightBST ) {
@@ -85,7 +90,7 @@ public class isBST {
 //		
 //		
 //	}
-//	
+	
 	public static BinaryTreeNode<Integer> takeInputLevelWise(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter root data");
@@ -119,13 +124,7 @@ public class isBST {
 			
 			
 		}
+	
 		return root;
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		BinaryTreeNode<Integer> root = takeInputLevelWise();
-		System.out.println(isBST3(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
-	}
-
 }
