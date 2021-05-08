@@ -1,38 +1,30 @@
+package LL2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class AppendLastNToFirst {
 
-	public static  Node<Integer> appendLastNToFirst( Node<Integer> head, int n) {
-		if(head==null || n==0) {
-			return head;
-		}
-		 Node<Integer> temp=head;
-		 Node<Integer> temp1=head;
+public class Reverse_LinkedList_Recursive {
 
-		int i=0;
-		while(i < n) {
-			temp = temp.next;
-			i++;
-		}
-		System.out.println(temp.data);
-		while(temp.next !=null) {
-			temp1=temp1.next;
-			temp = temp.next;
-		}
-		System.out.println(temp.data+ " "+ temp1.data);
-		
-		 Node<Integer> newHead=head;
-		 Node<Integer> temp2 = temp1.next;
-		temp1.next=null;
-		temp.next=newHead;
-		head = temp2;
-		
-		return head;
+	public static  Node<Integer> reverseLinkedListRec( Node<Integer> head) {
+		//Your code goes here
+         Node<Integer> temp =  head.next;
+        if(temp.next== null){
+           head.next = null;
+            temp.next = head;
+            System.out.println(temp.data+" "+temp.next.data);
+            return temp;
+        }
+        
+         Node<Integer> smallAns = reverseLinkedListRec(head.next);
+         temp= smallAns;
+        while(temp.next != null){
+            temp=temp.next;
+        }
+        temp.next=head;
+        head.next=null;
+        return smallAns;
 	}
-	
-
 static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
     public static  Node<Integer> takeInput() throws IOException {
@@ -41,7 +33,7 @@ static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] datas = br.readLine().trim().split("\\s");
 
         int i = 0;
-        while (i < datas.length && !datas[i].equals("-1")) {
+        while(i < datas.length && !datas[i].equals("-1")) {
             int data = Integer.parseInt(datas[i]);
              Node<Integer> newNode = new  Node<Integer>(data);
             if(head == null) {
@@ -58,7 +50,7 @@ static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         return head;
     }
     
-    public static void print( Node<Integer> head){
+    public static void print( Node<Integer> head) {
         while(head != null) {
             System.out.print(head.data + " ");
             head = head.next;
@@ -68,19 +60,18 @@ static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     }
     
     public static void main(String[] args) throws NumberFormatException, IOException {
+        
         int t = Integer.parseInt(br.readLine().trim());
 
         while (t > 0) {
             
-             Node<Integer> head = takeInput(); 
+             Node<Integer> head = takeInput();
 
-            int n = Integer.parseInt(br.readLine().trim());
-            head = appendLastNToFirst(head, n);
-            print(head);
-
+             Node<Integer> newHead = reverseLinkedListRec(head);
+            print(newHead);
+            
             t -= 1;
         }
-        
-    }
 
+}
 }

@@ -1,6 +1,8 @@
+package LL1;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 
 public class Palindrome_LinkedList {
 
@@ -16,6 +18,10 @@ public class Palindrome_LinkedList {
         	this.data = data;
     	}
 	}
+
+	Palindrome LinkedList
+	Send Feedback
+	You have been given a head to a singly linked list of integers. Write a function check to whether the list given is a 'Palindrome' or not.
 
 */
 	

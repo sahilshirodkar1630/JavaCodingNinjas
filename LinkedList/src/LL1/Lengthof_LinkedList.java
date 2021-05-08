@@ -1,4 +1,6 @@
+package LL1;
 import java.util.Scanner;
+
 
 public class Lengthof_LinkedList {
 	

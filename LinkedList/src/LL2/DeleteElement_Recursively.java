@@ -1,29 +1,13 @@
+package LL2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Reverse_LinkedList_Recursive {
 
-	public static  Node<Integer> reverseLinkedListRec( Node<Integer> head) {
-		//Your code goes here
-         Node<Integer> temp =  head.next;
-        if(temp.next== null){
-           head.next = null;
-            temp.next = head;
-            System.out.println(temp.data+" "+temp.next.data);
-            return temp;
-        }
-        
-         Node<Integer> smallAns = reverseLinkedListRec(head.next);
-         temp= smallAns;
-        while(temp.next != null){
-            temp=temp.next;
-        }
-        temp.next=head;
-        head.next=null;
-        return smallAns;
-	}
-static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+public class DeleteElement_Recursively {
+
+	 
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
     public static  Node<Integer> takeInput() throws IOException {
          Node<Integer> head = null, tail = null;
@@ -59,17 +43,30 @@ static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
     public static void main(String[] args) throws NumberFormatException, IOException {
         
-        int t = Integer.parseInt(br.readLine().trim());
-
-        while (t > 0) {
+      
             
              Node<Integer> head = takeInput();
+            int pos = Integer.parseInt(br.readLine().trim());
 
-             Node<Integer> newHead = reverseLinkedListRec(head);
+             Node<Integer> newHead = deleteNodeRec(head, pos);
             print(newHead);
             
-            t -= 1;
-        }
+        
 
-}
+    }
+
+	public static  Node<Integer> deleteNodeRec( Node<Integer> head, int pos) {
+    	//Your code goes here
+          if(head==null){
+            return head;
+        }
+        if(pos == 0){
+            return head.next;
+        }
+      
+        head.next = deleteNodeRec(head.next,pos-1);
+        return head;
+	}
+
+
 }

@@ -1,6 +1,8 @@
+package LL2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
 public class Midpont_Of_LinkedList {
 //	Code : Midpoint of Linked list
 	

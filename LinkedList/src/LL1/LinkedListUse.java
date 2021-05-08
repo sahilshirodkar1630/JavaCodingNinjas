@@ -1,6 +1,13 @@
+package LL1;
 import java.util.Scanner;
 
+
+
 public class LinkedListUse {
+	public static class DoubleNode{
+		Node<Integer> head;
+		Node<Integer> tail;
+	}
 
 	public static void print(Node<Integer> head) {
 
